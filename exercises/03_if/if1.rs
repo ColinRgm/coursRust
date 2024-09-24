@@ -1,26 +1,31 @@
-use std::ptr::null;
-
 fn bigger(a: i32, b: i32) -> i32 {
     // TODO: Complete this function to return the bigger number!
-    if a > b {
+    if a > b{
+        println!("{} is bigger {} | {}", a, a, b);
         a
     } else if a < b {
+        println!("{} is bigger {} | {}", b, a, b);
         b
     } else {
-        c
+        println!("They're equal {} | {}", a, b);
+        a
     }
-
 
     // If both numbers are equal, any of them can be returned.
     // Do not use:
     // - another function call
     // - additional variables
+
 }
 
 fn main() {
     // You can optionally experiment here.
     bigger(1, 2);
 }
+
+
+
+
 
 // Don't mind this for now :)
 #[cfg(test)]

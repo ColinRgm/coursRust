@@ -10,11 +10,26 @@
 
 // TODO: Write a function that calculates the price of an order of apples given
 // the quantity bought.
-// fn calculate_price_of_apples(???) -> ??? { ??? }
+
+fn calculate_price_of_apples(quantity: i32) {
+    if quantity >= 40 {
+        let price_per_apple = quantity * 1;
+
+        println!("The price for {} apples is {}", quantity, price_per_apple)
+    } else {
+        let price_per_apple = quantity * 2;
+
+        println!("The price for {} apples is {}", quantity, price_per_apple)
+    }
+}
 
 fn main() {
     // You can optionally experiment here.
+    calculate_price_of_apples(10);
+
+    calculate_price_of_apples(41);
 }
+
 
 // Don't change the tests!
 #[cfg(test)]
