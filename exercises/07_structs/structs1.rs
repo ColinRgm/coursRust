@@ -16,14 +16,26 @@ fn main() {
 mod tests {
     use super::*;
 
+
+
     #[test]
     fn regular_structs() {
         // TODO: Instantiate a regular struct.
-        // let green =
+        struct Green {
+            red: i32,
+            green: i32,
+            blue: i32,
+        };
 
-        assert_eq!(green.red, 0);
-        assert_eq!(green.green, 255);
-        assert_eq!(green.blue, 0);
+        let color = Green {
+            red: 0,
+            green: 255,
+            blue: 0
+        };
+
+        assert_eq!(color::red, 0);
+        assert_eq!(color::green, 255);
+        assert_eq!(green::blue, 0);
     }
 
     #[test]
@@ -39,7 +51,7 @@ mod tests {
     #[test]
     fn unit_structs() {
         // TODO: Instantiate a unit struct.
-        // let unit_struct =
+        let unit_struct = "blues";
         let message = format!("{unit_struct:?}s are fun!");
 
         assert_eq!(message, "UnitStructs are fun!");
