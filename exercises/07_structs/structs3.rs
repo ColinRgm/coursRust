@@ -24,8 +24,16 @@ impl Package {
     }
 
     // TODO: Add the correct return type to the function signature.
+
+
     fn is_international(&self) {
         // TODO: Read the tests that use this method to find out when a package
+        if self.sender_country != self.recipient_country
+        {
+            println!("This is an international package")
+        } else {
+            println!("This package is not international")
+        }
         // is considered international.
     }
 
