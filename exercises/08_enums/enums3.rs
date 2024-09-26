@@ -36,8 +36,8 @@ impl State {
         self.message = s;
     }
 
-    fn change_color(&mut self, red: u8, green: u8, blue: u8) {
-        self.color = (red, green, blue);
+    fn change_color(&mut self, red: i32, green: i32, blue: i32) {
+        self.color = (red.try_into().unwrap(), green.try_into().unwrap(), blue.try_into().unwrap());
     }
 
     fn quit(&mut self) {
@@ -47,6 +47,13 @@ impl State {
     fn process(&mut self, message: Message) {
         // TODO: Create a match expression to process the different message
         // variants using the methods defined above.
+        match message {
+            Message::Resize { width, height } => self.resize(width, height),
+            Message::Move(point) => self.move_position(point),
+            Message::Echo(s) => self.echo(s),
+            Message::ChangeColor(red, green, blue) => self.change_color(red, green, blue),
+            Message::Quit => self.quit(),
+        }
     }
 }
 

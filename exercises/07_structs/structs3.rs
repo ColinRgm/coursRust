@@ -26,20 +26,24 @@ impl Package {
     // TODO: Add the correct return type to the function signature.
 
 
-    fn is_international(&self) {
+    fn is_international(&self) -> bool {
         // TODO: Read the tests that use this method to find out when a package
         if self.sender_country != self.recipient_country
         {
-            println!("This is an international package")
+            println!("This is an international package");
+            true
         } else {
-            println!("This package is not international")
+            println!("This package is not international");
+            false
         }
         // is considered international.
+
     }
 
     // TODO: Add the correct return type to the function signature.
-    fn get_fees(&self, cents_per_gram: u32) {
+    fn get_fees(&self, cents_per_gram: u32) -> u32 {
         // TODO: Calculate the package's fees.
+        self.weight_in_grams * cents_per_gram
     }
 }
 
@@ -55,7 +59,7 @@ mod tests {
     #[should_panic]
     fn fail_creating_weightless_package() {
         let sender_country = String::from("Spain");
-        let recipient_country = String::from("Austria");
+        let recipient_country = String::from("Australia");
 
         Package::new(sender_country, recipient_country, 5);
     }
